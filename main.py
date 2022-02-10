@@ -1,13 +1,19 @@
-import socket
-from requests import get
+class FieldElement:
 
-hostname = socket.gethostname()
-local_ip = socket.gethostbyname(hostname)
-public_ip = get('http://api.ipify.org').text
-print(".......................")
-print(f'Host: {hostname}')
-print(f'Local iP: {local_ip}')
-print(f'Public iP: {public_ip}')
-ent = input("Press \"e: \"")
-if ent == "e":
-    break
+    def __init__(self, num, prime):
+        if num >= prime or num < 0:
+            error = 'Num {} not in field range 0 to {}'.format(
+                num, prime-1)
+            raise ValueError(error)
+
+        self.num = num
+        self.prime = prime
+
+        def __repr__(self):
+            return 'FieldElement_{} ({})'.format(
+                self.prime, self.num)
+
+        def __eq__(self, other):
+            if other is None:
+                return False
+            return self.num == other.num and self,prime == other.prime
