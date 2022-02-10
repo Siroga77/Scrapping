@@ -17,3 +17,4 @@ class FieldElement:
             if other is None:
                 return False
             return self.num == other.num and self,prime == other.prime
+            pass
