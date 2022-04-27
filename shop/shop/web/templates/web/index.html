@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+</head>
+<body>
+    <header class="s-header">
+        <div class="header-logo">
+            <a href="{% url 'home' %}" class="site-logo"><img src="{% static 'images/burger.png' %}" alt=""></a>
+        </div>
+        <nav class="header-nav">
+            <a href="#0" class="header-nav__close" title="close"><span>Закрыть</span></a>
+            <div class="header-nav__content">
+                <h3>Меню</h3>
+                <ul class="heaver-nav__list">
+                    <li class="current"><a href="#home" title="home">Главная</a></li>
+                    <li><a href="#">Магазин</a></li>
+                    <li><a href="#info" title="info">О нас</a></li>
+                </ul>
+                
+                <ul class="header-nav__social">
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </nav>
+        <a href="#0" class="header-menu-toogle">
+            <span class="header-menu-text">Меню</span>
+        </a>
+    </header>
+</body>
+</html>

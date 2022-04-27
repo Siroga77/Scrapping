@@ -1,7 +1,10 @@
 import folium
 import requests
 from pyfiglet import Figlet
+from colorama import init, Fore
 
+
+init()
 
 def get_info_by_ip(ip='104.20.15.118'):
     try:
@@ -27,7 +30,7 @@ def get_info_by_ip(ip='104.20.15.118'):
         area.save(f'{response.get("query")}_{response.get("city")}.html')
 
     except requests.exceptions.ConnectionError:
-        print('[!] Please check your connection!')
+        print(Fore.RED+'[!] Please check your connection!')
 
 def main():
     preview_text = Figlet(font='slant')
